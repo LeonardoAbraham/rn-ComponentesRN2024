@@ -5,11 +5,11 @@ module.exports = {
         'prettier/prettier': [
             'error',
             {
-                endOfLine: 'auto',
+                endOfLine: 'off',
                 'no-inline-styles': false,
                 singleQuote: true,
-                parser: 'flow'
-            }
+                parser: 'flow',
+            },
         ],
         'react/jsx-uses-react': 'off',
         'react/react-in-jsx-scope': 'off',
@@ -23,8 +23,8 @@ module.exports = {
             {
                 allowAsProps: true | false,
                 customValidators:
-                    [] /* optional array of validators used for propTypes validation */
-            }
-        ]
-    }
+                    [] /* optional array of validators used for propTypes validation */,
+            },
+        ],
+    },
 };

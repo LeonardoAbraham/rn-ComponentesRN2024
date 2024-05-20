@@ -14,8 +14,12 @@ module.exports = {
     "tabWidth": 4,
     "requireConfig": false,
     "useTabs": false,
-    "trailingComma": "none",
+    "trailingComma": "all",
     "bracketSpacing": true,
     "jsxBracketSameLine": false,
-    "semi": true
+    "bracketSameLine": false,
+    "semi": true,
+    "htmlWhitespaceSensitivity": "ignore",
+    "singleAttributePerLine": true,
+    "endOfLine": "auto"
 };
