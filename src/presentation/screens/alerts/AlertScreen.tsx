@@ -30,6 +30,16 @@ export const AlertScreen = () => {
             {text: 'OK', onPress: () => console.log('OK Pressed')},
         ]);
 
+    const showPrompt = () =>{ //No funciona para android
+        Alert.prompt(
+            'Correo electronico',
+            'Esto es un mensaje de ejemplo',
+            (valor:string) => console.log({valor}),
+            'secure-text',
+            'Soy un valor por defecto',
+            'number-pad'
+        );
+    };
 
     return (
         <CustomView style={globalStyles.globalMargin}>
@@ -51,7 +61,7 @@ export const AlertScreen = () => {
 
             <Button 
                 text='Promp - Input'
-                onPress={() => {}}
+                onPress={showPrompt}
             />
         </CustomView>
     );
