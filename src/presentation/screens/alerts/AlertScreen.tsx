@@ -3,6 +3,8 @@ import { CustomView } from '../../components/ui/CustomView';
 import { Title } from '../../components/ui/Title';
 import { globalStyles } from '../../../config/theme/theme';
 import { Button } from '../../components/ui/Button';
+import prompt from 'react-native-prompt-android';
+import { showPrompt } from '../../../config/adapters/prompt.adapter';
 
 export const AlertScreen = () => {
 
@@ -30,15 +32,27 @@ export const AlertScreen = () => {
             {text: 'OK', onPress: () => console.log('OK Pressed')},
         ]);
 
-    const showPrompt = () =>{ //No funciona para android
-        Alert.prompt(
-            'Correo electronico',
-            'Esto es un mensaje de ejemplo',
-            (valor:string) => console.log({valor}),
-            'secure-text',
-            'Soy un valor por defecto',
-            'number-pad'
-        );
+    const onShowPrompt = () =>{ 
+
+        showPrompt({
+            title: 'Lorem Ipsum',
+            subTitle: 'Esto es un texto para el subtitulo',
+            buttons:[
+                { text: 'Ok', onPress: () => console.log('ok') }
+            ],
+            placeholder: 'Placeholder'
+        });
+
+        // ! Código nativo
+        // No funciona para android 
+        //Alert.prompt(
+        //    'Correo electronico',
+        //    'Esto es un mensaje de ejemplo',
+        //    (valor:string) => console.log({valor}),
+        //    'secure-text',
+        //    'Soy un valor por defecto',
+        //    'number-pad'
+        //);
     };
 
     return (
@@ -61,7 +75,7 @@ export const AlertScreen = () => {
 
             <Button 
                 text='Promp - Input'
-                onPress={showPrompt}
+                onPress={onShowPrompt}
             />
         </CustomView>
     );
