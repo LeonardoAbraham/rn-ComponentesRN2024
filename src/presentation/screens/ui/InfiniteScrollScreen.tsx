@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, Image, ActivityIndicator } from 'react-native';
 import { CustomView } from '../../components/ui/CustomView';
 import { Title } from '../../components/ui/Title';
 import { colors } from '../../../config/theme/theme';
@@ -16,27 +16,52 @@ export const InfiniteScrollScreen = () => {
     }
 
     return (
-        <CustomView margin>
-            <Title text='Infinite Scroll' safe />
-
+        <View style={{backgroundColor: 'black'}}>
             <FlatList 
                 data={numbers}
                 onEndReached={loadMore}
                 onEndReachedThreshold={0.6}
                 keyExtractor={(item) => item.toString()}
-                renderItem={({item}) => (
-                    <Text 
-                        style={{
-                            height:300,
-                            backgroundColor: colors.primary,
-                            color: 'white',
-                            fontSize: 50,
-                        }}
-                    >
-                        {item}
-                    </Text>
+
+                renderItem={({item}) => <ListItem number={item} />}
+
+                ListFooterComponent={() => (
+                    <View style={{ height: 150, justifyContent: 'center' }}>
+                        <ActivityIndicator size={ 40 } color={ colors.primary } />
+                    </View>
                 )}
             />
-        </CustomView>
+        </View>
     );
 };
+
+interface ListItemProps {
+    number: number;
+}
+
+const ListItem = ({number}: ListItemProps) => {
+    return (
+        <Image 
+            source={{uri: `https://picsum.photos/id/${number}/200/300`}}
+            style={{
+                height: 400,
+                width: '100%'
+            }}
+        />
+    )
+}
+
+//const ListItem = ({number}: ListItemProps) => {
+//    return (
+//        <Text 
+//            style={{
+//                height:300,
+//                backgroundColor: colors.primary,
+//                color: 'white',
+//                fontSize: 50,
+//            }}
+//        >
+//            {number}
+//        </Text>
+//    )
+//}
