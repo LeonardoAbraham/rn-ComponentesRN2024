@@ -21,16 +21,16 @@ export const ThemeProvider = ({children}: PropsWithChildren) => {
 
     const [currentTheme, setCurrentTheme] = useState<ThemeColor>('light');
 
-    /* useEffect(() => {
+    useEffect(() => {
         if(colorScheme === 'dark'){
             setCurrentTheme('dark');
         }
         else {
             setCurrentTheme('light');
         }
-    }, [colorScheme]) */
+    }, [colorScheme])
 
-    useEffect(() => {
+    /* useEffect(() => {
         const subscription = AppState.addEventListener('change', nextAppState => {
             
             const colorScheme = Appearance.getColorScheme();
@@ -41,7 +41,7 @@ export const ThemeProvider = ({children}: PropsWithChildren) => {
         return () => {
           subscription.remove();
         };
-    }, []);
+    }, []); */
     
 
     const setTheme = (theme: ThemeColor) => {
