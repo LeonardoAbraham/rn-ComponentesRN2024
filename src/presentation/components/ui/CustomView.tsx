@@ -1,5 +1,5 @@
 import { ReactNode, useContext } from 'react';
-import { View, Text, StyleProp, ViewStyle } from 'react-native';
+import { View, StyleProp, ViewStyle } from 'react-native';
 import { globalStyles } from '../../../config/theme/theme';
 import { ThemeContext } from '../../context/ThemeContext';
 

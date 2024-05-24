@@ -57,6 +57,16 @@ export const globalStyles = StyleSheet.create({
         //color: colors.text,
     },
 
+    inputDark: {
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
+        borderColor: 'white',
+        borderRadius: 10,
+        color: 'white',
+    },
+
     mainContainer: {
         flex: 1,
         //backgroundColor: colors.background,
