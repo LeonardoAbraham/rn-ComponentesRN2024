@@ -38,9 +38,6 @@ export const Animation101Screen = () => {
                 }} 
                 styles={{ marginTop: 10 }}
             />
-                <Text>
-                    FadeIn
-                </Text>
 
             <Button
                 text='FadeOut'
